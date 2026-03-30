@@ -1,5 +1,5 @@
-require('dotenv').config();
-const { ready, run, query } = require('./src/database/sqlite');
+require('dotenv').config(); // Carrega variáveis de ambiente (.env)
+const { ready, run, query } = require('./src/database/sqlite'); // Importa conexão com banco (sqlite.js)
 const bcrypt = require('bcryptjs');
 
 async function seed() {

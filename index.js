@@ -1,18 +1,18 @@
-require('dotenv').config();
+require('dotenv').config(); // Carrega variáveis de ambiente (.env)
 
-const express = require('express');
-const cors    = require('cors');
-const path    = require('path');
+const express = require('express'); // Importa o framework Express (servidor web)
+const cors    = require('cors'); // Permite requisições de diferentes origens (front-end)
+const path    = require('path'); 
 
-const app  = express();
+const app  = express(); // Inicializa o app
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const { ready } = require('./src/database/sqlite');
-const routes    = require('./src/routes/index');
+const { ready } = require('./src/database/sqlite'); // Importa conexão com banco (sqlite.js)
+const routes    = require('./src/routes/index'); // Importa todas as rotas da aplicação
 
 ready.then(() => {
   app.use('/api', routes);
