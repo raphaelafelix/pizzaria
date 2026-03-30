@@ -5,17 +5,17 @@ const cors    = require('cors'); // Permite requisições de diferentes origens 
 const path    = require('path'); 
 
 const app  = express(); // Inicializa o app
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001; // Define porta do servidor
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Habilita CORS
+app.use(express.json()); // Permite JSON no body das requisições
 app.use(express.static(path.join(__dirname, 'public')));
 
 const { ready } = require('./src/database/sqlite'); // Importa conexão com banco (sqlite.js)
 const routes    = require('./src/routes/index'); // Importa todas as rotas da aplicação
 
-ready.then(() => {
-  app.use('/api', routes);
+ready.then(() => { // Inicia servidor somente após banco estar pronto
+  app.use('/api', routes); // Usa as rotas da API
 
   app.get('/teste', (req, res) => {
     res.json({ mensagem: 'API da Pizzaria funcionando!', status: 'online', porta: PORT });

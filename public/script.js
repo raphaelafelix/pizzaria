@@ -1,4 +1,4 @@
-const API = '/api';
+const API = '/api';  // Salva dados do usuário na requisição
 
 let cPizzas   = [];
 let cClientes = [];
@@ -7,7 +7,7 @@ let TOKEN          = localStorage.getItem('pz_token') || '';
 let USUARIO_LOGADO = JSON.parse(localStorage.getItem('pz_usuario') || 'null');
 let mesaEmFechamento = null;
 
-async function fazerLogin() {
+async function fazerLogin() { // Função de login
   const email = document.getElementById('l-email').value.trim();
   const senha = document.getElementById('l-senha').value;
   const btn   = document.getElementById('btn-login');
@@ -24,7 +24,7 @@ async function fazerLogin() {
   erro.style.display = 'none';
 
   try {
-    const res  = await fetch(API + '/auth/login', {
+    const res  = await fetch(API + '/auth/login', { // Faz requisição para API
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ email, senha }),

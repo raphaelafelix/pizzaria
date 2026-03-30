@@ -1,3 +1,24 @@
+// Inicializa banco SQLite em memória/arquivo
+// Cria tabelas automaticamente caso não existam
+
+// Função ready:
+// - Carrega banco existente OU cria novo
+// - Executa comandos SQL de criação
+
+// Função salvar:
+// - Exporta banco e salva no arquivo pizzaria.db
+
+// Função query:
+// - Executa SELECT com vários resultados
+
+// Função get:
+// - Executa SELECT retornando apenas 1 registro
+
+// Função run:
+// - Executa INSERT, UPDATE ou DELETE
+// - Retorna id do último registro inserido
+
+
 const initSqlJs = require('sql.js');
 const fs        = require('fs');
 const path      = require('path');
