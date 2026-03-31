@@ -82,7 +82,7 @@ document.querySelectorAll('.modal-bg').forEach(bg =>
   bg.addEventListener('click', e => { if (e.target === bg) bg.classList.remove('open'); })
 );
 
-function R$(v) {
+function R$(v) { // para retornar o valor do pedido de forma correta
   return 'R$ ' + Number(v || 0).toFixed(2).replace('.', ',');
 }
 
