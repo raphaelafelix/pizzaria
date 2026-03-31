@@ -18,7 +18,7 @@ function formatarPizza(row) {
 
 const Pizza = {
 
-  async findAll() {
+  async findAll() { // BUSCA, ADICIONA E DELETA OS DADOS REQUISITADOS NA TABELA DE DADOS, os códigos da pasta "models" são basicamente para regrar as solicitações. Assemelha-se à IF, IF ELSE...
     await ready;
     return query('SELECT * FROM pizzas ORDER BY categoria, nome').map(formatarPizza);
   },

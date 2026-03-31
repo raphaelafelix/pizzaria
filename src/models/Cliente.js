@@ -15,7 +15,7 @@ function formatarCliente(row) {
   };
 }
 
-const Cliente = {
+const Cliente = { // BUSCA, ADICIONA E DELETA OS DADOS REQUISITADOS NA TABELA DE DADOS, os códigos da pasta "models" são basicamente para regrar as solicitações. Assemelha-se à IF, IF ELSE...
 
   async findAll(busca = '') {
     await ready;
