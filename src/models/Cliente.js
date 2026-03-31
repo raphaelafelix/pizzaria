@@ -1,4 +1,4 @@
-const { ready, query, run, get } = require('../database/sqlite');
+const { ready, query, run, get } = require('../database/sqlite'); // para salvar e conectar-se os dados obtidos
 
 function formatarCliente(row) {
   if (!row) return null;

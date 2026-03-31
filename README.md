@@ -1,13 +1,13 @@
 # Sistema de Pizzaria!
 
 O sistema desenvolvido consiste em uma aplicação web para gerenciamento de uma pizzaria, permitindo o controle de pedidos, clientes, usuários e pizzas. A plataforma conta com autenticação utilizando JWT (JSON Web Token), garantindo segurança no acesso, além de diferentes níveis de permissão, como Administrador, Atendente e Garçom. Cada perfil possui funcionalidades específicas, como gerenciamento de usuários, atendimento de pedidos e controle de mesas.
-<img src="./pizzaria/images/funcionando.png" alt="" width=150px>
+
 
 ---
 
 ## Tecnologias utilizadas
 O projeto foi construído utilizando tecnologias como **Node.js**, **Express**, **SQLite** (por meio do sql.js), além de **HTML**, **CSS** e **JavaScript** no front-end. Também foram utilizadas **bibliotecas** como **bcryptjs** para criptografia de senhas, **dotenv** para gerenciamento de variáveis de ambiente e cors para permitir a comunicação entre o servidor e o cliente.
-<img src="./pizzaria/images/" alt="">
+
 
 
 ### Pré-requisitos
@@ -17,7 +17,9 @@ Para executar o sistema, é necessário ter o Node.js e o npm instalados. Após 
 
 ---
 ## Estruturação
-A estrutura do projeto foi organizada em pastas específicas para melhor entendimento e manutenção. A pasta “public” contém os arquivos do front-end, enquanto a pasta “src” abriga o back-end, dividido em “database” para conexão com o banco, “models” para as regras de negócio, “routes” para as rotas da API e “middlewares” para autenticação.
+A estrutura do projeto foi organizada em pastas específicas para melhor entendimento e manutenção. A pasta “public” contém os arquivos do front-end, enquanto a pasta **“src”** abriga o back-end, dividido em “database” para conexão com o banco, **“models”** para as regras de negócio, **“routes”** para as rotas da API e **“middlewares”** para autenticação.
+<img src="./images/pastas.png">
+
 
 ---
 
