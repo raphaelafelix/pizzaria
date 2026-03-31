@@ -11,7 +11,7 @@ O sistema desenvolvido consiste em uma aplicação web para gerenciamento de uma
 ---
 
 ## Tecnologias utilizadas
-O projeto foi construído utilizando tecnologias no front-end como:
+O projeto foi construído utilizando tecnologias no front-end como ⬇️:
 - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white), 
 - ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB), 
 - ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white), 
