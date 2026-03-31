@@ -1,13 +1,13 @@
-const API = '/api';  // Salva dados do usuário na requisição
+const API = '/api';  // salva dados do usuário na requisição
 
-let cPizzas   = [];
-let cClientes = [];
+let cPizzas   = []; // armazena pizzas carregadas do banco
+let cClientes = []; // armazena clientes cadastrados
 
-let TOKEN          = localStorage.getItem('pz_token') || '';
-let USUARIO_LOGADO = JSON.parse(localStorage.getItem('pz_usuario') || 'null');
+let TOKEN          = localStorage.getItem('pz_token') || ''; // mantém login ativo
+let USUARIO_LOGADO = JSON.parse(localStorage.getItem('pz_usuario') || 'null'); // recupera dados de um usuário já logado
 let mesaEmFechamento = null;
 
-async function fazerLogin() { // Função de login
+async function fazerLogin() { // função de login
   const email = document.getElementById('l-email').value.trim();
   const senha = document.getElementById('l-senha').value;
   const btn   = document.getElementById('btn-login');
@@ -24,7 +24,7 @@ async function fazerLogin() { // Função de login
   erro.style.display = 'none';
 
   try {
-    const res  = await fetch(API + '/auth/login', { // Faz requisição para API
+    const res  = await fetch(API + '/auth/login', { // faz requisição para API
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ email, senha }),
@@ -33,6 +33,9 @@ async function fazerLogin() { // Função de login
     const data = await res.json();
     if (!res.ok) throw new Error(data.erro || 'Credenciais inválidas');
 
+    // essa função faz a autenticação e mantém o usuário logado
+
+    // salva no navegador
     TOKEN = data.token;
     USUARIO_LOGADO = data.usuario;
     localStorage.setItem('pz_token', TOKEN);
@@ -49,6 +52,7 @@ async function fazerLogin() { // Função de login
     btn.textContent = 'Entrar';
   }
 }
+
 
 function sair() {
   TOKEN = '';
@@ -106,7 +110,7 @@ async function api(method, url, body) {
   const res  = await fetch(API + url, opts);
   const data = await res.json();
 
-  if (res.status === 401) { sair(); throw new Error('Sessão expirada'); }
+  if (res.status === 401) { sair(); throw new Error('Sessão expirada'); } // se o usuário deslogar... mostre 'sessão expirada'
   if (!res.ok) throw new Error(data.erro || 'Erro na requisição');
   return data;
 }
@@ -305,7 +309,7 @@ function addItemMesa() {
   document.getElementById('itens-mesa-lista').appendChild(d);
 }
 
-function recalcMesa() {
+function recalcMesa() { // organiza os pedidos feitos em tempo real
   let sub = 0;
   document.querySelectorAll('#itens-mesa-lista .item-row').forEach(row => {
     const sel = row.querySelector('.ip');

@@ -1,7 +1,7 @@
 # Sistema de Pizzaria!
 
 O sistema desenvolvido consiste em uma aplicação web para gerenciamento de uma pizzaria, permitindo o controle de pedidos, clientes, usuários e pizzas. A plataforma conta com autenticação utilizando JWT (JSON Web Token), garantindo segurança no acesso, além de diferentes níveis de permissão, como Administrador, Atendente e Garçom. Cada perfil possui funcionalidades específicas, como gerenciamento de usuários, atendimento de pedidos e controle de mesas.
-<img src="./pizzaria/images/funcionando.png" alt="">
+<img src="./pizzaria/images/funcionando.png" alt="" width=150px>
 
 ---
 

@@ -1,22 +1,22 @@
-// Inicializa banco SQLite em memória/arquivo
-// Cria tabelas automaticamente caso não existam
+// inicializa banco SQLite em memória/arquivo
+// cria tabelas automaticamente caso não existam
 
-// Função ready:
-// - Carrega banco existente OU cria novo
-// - Executa comandos SQL de criação
+// função ready:
+// - carrega banco existente OU cria novo
+// - executa comandos SQL de criação
 
-// Função salvar:
-// - Exporta banco e salva no arquivo pizzaria.db
+// função salvar:
+// - exporta banco e salva no arquivo pizzaria.db
 
-// Função query:
-// - Executa SELECT com vários resultados
+// função query:
+// - executa SELECT com vários resultados
 
-// Função get:
-// - Executa SELECT retornando apenas 1 registro
+// função get:
+// - executa SELECT retornando apenas 1 registro
 
-// Função run:
-// - Executa INSERT, UPDATE ou DELETE
-// - Retorna id do último registro inserido
+// função run:
+// - executa INSERT, UPDATE ou DELETE
+// - retorna id do último registro inserido
 
 
 const initSqlJs = require('sql.js');
@@ -42,6 +42,8 @@ const ready = (async () => {
 
   db.run('PRAGMA foreign_keys = ON');
 
+
+  // armazena usuários do sistema com controle de acesso
   db.run(`
     CREATE TABLE IF NOT EXISTS usuarios (
       id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -82,6 +84,7 @@ const ready = (async () => {
     )
   `);
 
+  // guarda os pedidos feitos na pizzaria
   db.run(`
     CREATE TABLE IF NOT EXISTS pedidos (
       id              INTEGER PRIMARY KEY AUTOINCREMENT,

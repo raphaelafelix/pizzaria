@@ -2,7 +2,7 @@ const express  = require('express');
 const jwt      = require('jsonwebtoken');
 const router   = express.Router();
 const auth     = require('../middlewares/auth');
-
+// o require mostra o caminho das variáveis nos arquivos
 const Usuario  = require('../models/Usuario');
 const Pizza    = require('../models/Pizza');
 const Cliente  = require('../models/Cliente');
